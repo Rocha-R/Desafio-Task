@@ -11,7 +11,7 @@
 	       if (isset($_GET['nome']) && $_GET['nome'] != '') {//Função isset para verificar se o indice foi definido,
 		   //no caso se o indice "nome" existe dentro do Array "$_GET" e
 		   //se o indice é diferente de vazio.
-		         //$_GET : Variável superGlobais (existem dentro do PHP já)
+		         
 				 
 			$tarefa = array();
 			
@@ -36,11 +36,7 @@
 		}		
 		
 		$tarefa = buscar_tarefa($conexao, $_GET['id']);	 
-					//a função acima buscara apenas a tarefa que queremos
-					//editar, o parametro passado para a busca será o 'Id'
-					//que a tarefa tem como registro (numero de identificação)
-                    //no banco.
-				
+			
 				
 				 
 		

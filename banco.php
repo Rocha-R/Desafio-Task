@@ -1,7 +1,9 @@
 <?php
 
 $bdServidor = '127.0.0.1';
-$bdUsuario = 'systemtask';
+$bdUsuario = 'systemtask';//Caso naõ queira criar um usuário, apenas troque os valores das variáveis - 
+//$bdUsuario e $bdsenha por "root" que é o usuário padrão nestes casos.
+
 $bdSenha = 'taskvoxus'; //Sempre há problema se naõ for criado como localhost
 $bdBanco = 'task';
 
@@ -29,17 +31,15 @@ if (mysqli_connect_errno($conexao)) {
 			 //linha do resultado é armazenada na variável $tarefa
 			 //(no singular), para diferenciar do array $tarefas.
 			 
-			 $tarefas[] = $tarefa;//Cada linha é armazenada no array $tarefas.
+			 $tarefas[] = $tarefa;
 			 
 			 }
-			 return $tarefas;//AQui o return devolve os dados para quem chamou a função.
+			 return $tarefas;
 		}
 
    
    function	gravar_tarefa($conexao, $tarefa)
-    { /*Não deixe de reparar que abrimos a string $sqlGravar na 
-	    linha onde ela é declarada e a fechamos na linha
-        depois do código SQL. */
+    { 
 		
       $sqlGravar = "
          INSERT INTO task
@@ -52,9 +52,6 @@ if (mysqli_connect_errno($conexao)) {
 	 //A data precisa ser formatada como uma string para o mysql,
 	 //por isso está entre aspas.
 	 
-       /*Não se esqueça de colocar as variáveis PHP dentro das 
-	   chaves quando estiver colocando o conteúdo das variáveis
-       dentro de outras strings. EX: '{$tarefa['nome']}' */
 	   
        mysqli_query($conexao, $sqlGravar);//A função "mysqli_query()"
        //serve para executar código SQl. Seja para devolver dados com

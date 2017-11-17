@@ -2,9 +2,6 @@
      
 	    <input type="hidden" name="id" 
 		        value="<?php echo $tarefa['id']; ?>" />
-        <!--Este campo vem junto com a tarefa referente ao 'id' escolhido
-        porém como não precisamos editar o 'id' deixamos o campo como 'hidden'
-         invisível.		-->
       <fieldset>
              <legend>Nova Task</legend>
 			 
